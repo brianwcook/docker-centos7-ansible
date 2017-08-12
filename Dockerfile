@@ -1,10 +1,10 @@
-FROM debian:stretch
+FROM centos7
 LABEL maintainer="Jeff Geerling"
 
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install dependencies.
-RUN apt-get update \
+RUN yum -y update \
     && apt-get install -y --no-install-recommends \
        sudo systemd \
     && rm -rf /var/lib/apt/lists/* \
